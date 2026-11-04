@@ -1,0 +1,14 @@
+
+body{font-family:Arial,sans-serif;background:#eef3f8;margin:0;color:#19334a}
+
+main{max-width:900px;margin:25px auto;background:white;padding:25px;border-radius:10px}
+
+input:not([type=checkbox]),textarea{display:block;width:100%;box-sizing:border-box;
+
+padding:10px;margin:9px 0 14px;border:1px solid #b6c5d3;border-radius:5px}
+
+textarea{min-height:75px}label{display:block;font-weight:bold;margin-top:10px}
+
+button,.button-link{display:inline-block;padding:10px 15px;margin:5px;background:#14558a;color:white;border:0;border-radius:5px;text-decoration:none;font:inherit}
+
+pre{white-space:pre-wrap;background:#f5f7fa;padding:16px}

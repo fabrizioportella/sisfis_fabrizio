@@ -1,0 +1,15 @@
+[
+  {
+    "expediente": "1314314414",
+    "empresa": "Manfred SA",
+    "placa": "P7C987",
+    "supervisor": "Nik Aparcana",
+    "antecedentes": "Muchas cosas\nOtras cosas\nUna cosa más",
+    "analisis": "Pasó 1 cosa\nPasó otra cosa\nY otra más",
+    "descargos": "",
+    "conclusiones": "Se concluyó lo concluido\nSe encontró lo encontrado",
+    "recomendaciones": "Se recomienda mejorar algunas cosas\nSe recomienda mejorar otras cosas",
+    "tieneDescargo": false,
+    "id": "1793758307956"
+  }
+]

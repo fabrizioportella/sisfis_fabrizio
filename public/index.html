@@ -1,0 +1,37 @@
+<!doctype html><html lang="es"><head><meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>SISFIS</title><link rel="stylesheet" href="styles.css"></head><body>
+
+<main><h1>SISFIS – Informes de fiscalización</h1>
+
+<form id="form"><input id="expediente" placeholder="N.º expediente" required>
+
+<input id="empresa" placeholder="Empresa ficticia" required>
+
+<input id="placa" placeholder="Placa ficticia">
+
+<input id="supervisor" placeholder="Supervisor">
+
+<label>Antecedentes</label><textarea id="antecedentes"></textarea>
+
+<label>Análisis de hechos</label><textarea id="analisis"></textarea>
+
+<label><input type="checkbox" id="tieneDescargo"> ¿Presentó descargos?</label>
+
+<div id="zonaDescargo" hidden><label>Análisis de descargos</label>
+
+<textarea id="descargos"></textarea></div>
+
+<label>Conclusiones</label><textarea id="conclusiones"></textarea>
+
+<label>Recomendaciones</label><textarea id="recomendaciones"></textarea>
+
+<button type="submit">Guardar informe</button></form>
+
+<h2>Informes registrados</h2><div id="lista"></div>
+
+<h2>Vista previa</h2><pre id="vista"></pre></main>
+
+<script src="app.js"></script></body></html>
