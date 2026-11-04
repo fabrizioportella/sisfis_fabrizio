@@ -1,37 +1,126 @@
-<!doctype html><html lang="es"><head><meta charset="UTF-8">
-
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SISFIS – Informes de fiscalización</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<h1>SISFIS – Informes de fiscalización</h1>
+<form id="form">
+<fieldset>
+<legend>Datos del informe</legend>
+<label for="expediente">N.º de expediente</label><input id="expediente" required>
+<label for="fechaInforme">Fecha de elaboración</label><input id="fechaInforme" type="date">
+<label for="ciudadInforme">Ciudad</label><input id="ciudadInforme" placeholder="Huánuco">
+<label for="destinatario">Destinatario</label><input id="destinatario" placeholder="Oficina Regional">
+<label for="supervisor">Nombre del supervisor</label><input id="supervisor">
+<label for="cargoSupervisor">Cargo del supervisor</label><input id="cargoSupervisor">
+<label for="empresaSupervisora">Empresa supervisora</label><input id="empresaSupervisora">
+<label for="asunto">Asunto</label><textarea id="asunto"></textarea>
+<label for="referencia">Referencia</label><textarea id="referencia"></textarea>
+<label for="objetivo">Objetivo de la fiscalización</label><textarea id="objetivo"></textarea>
+</fieldset>
 
-<title>SISFIS</title><link rel="stylesheet" href="styles.css"></head><body>
+<fieldset>
+<legend>Agente fiscalizado y unidad</legend>
+<label for="empresa">Empresa fiscalizada</label><input id="empresa" required>
+<label for="ruc">RUC</label><input id="ruc">
+<label for="registroHidrocarburos">N.º de Registro de Hidrocarburos</label><input id="registroHidrocarburos">
+<label for="actividad">Actividad fiscalizada</label><input id="actividad" placeholder="Transporte de combustibles líquidos y OPDH">
+<label for="placa">Placa principal</label><input id="placa">
+<label for="placaTracto">Placa del tracto</label><input id="placaTracto">
+<label for="fechaRegistro">Fecha de obtención del registro</label><input id="fechaRegistro" type="date">
+<label for="capacidad">Capacidad autorizada</label><input id="capacidad" placeholder="9000 galones">
+<label for="compartimientos">Número de compartimientos</label><input id="compartimientos">
+<label for="direccionLegal">Dirección legal</label><textarea id="direccionLegal"></textarea>
+<label for="distrito">Distrito</label><input id="distrito">
+<label for="provincia">Provincia</label><input id="provincia">
+<label for="departamento">Departamento</label><input id="departamento">
+<label for="imagenRegistro">Imagen N.° 01 – Consulta en línea del Registro de Hidrocarburos</label>
+<input id="imagenRegistro" type="file" accept="image/png,image/jpeg,image/webp">
+<button type="button" class="secondary-button" data-clear-image="imagenRegistro">Quitar imagen</button>
+<img id="vistaImagenRegistro" class="image-preview" alt="Vista previa del Registro de Hidrocarburos" hidden>
+</fieldset>
 
-<main><h1>SISFIS – Informes de fiscalización</h1>
+<fieldset>
+<legend>Antecedentes y base legal</legend>
+<label for="antecedentes">Antecedentes (un párrafo por línea)</label><textarea id="antecedentes"></textarea>
+<p>La base legal se conserva según el formato de la plantilla.</p>
+</fieldset>
 
-<form id="form"><input id="expediente" placeholder="N.º expediente" required>
+<fieldset>
+<legend>Mandato, coordinación y asignación</legend>
+<label for="numeroResolucion">N.º de resolución de mandato</label><input id="numeroResolucion">
+<label for="fechaResolucion">Fecha de resolución</label><input id="fechaResolucion" type="date">
+<label for="fechaCartaEmpresa">Fecha de comunicación de la empresa</label><input id="fechaCartaEmpresa" type="date">
+<label for="lugarFiscalizacion">Lugar de fiscalización</label><textarea id="lugarFiscalizacion"></textarea>
+<label for="fechaAsignacion">Fecha de asignación</label><input id="fechaAsignacion" type="date">
+<label for="especialistaRegional">Especialista regional que asigna</label><input id="especialistaRegional">
+<label for="numeroAsignacion">N.º de asignación</label><input id="numeroAsignacion">
+<label for="cartaLinea">N.º de carta línea</label><input id="cartaLinea">
+</fieldset>
 
-<input id="empresa" placeholder="Empresa ficticia" required>
+<fieldset>
+<legend>Registro y visita de fiscalización</legend>
+<label for="fechaConsultaRegistro">Fecha de consulta del Registro de Hidrocarburos</label><input id="fechaConsultaRegistro" type="date">
+<label for="fechaVisita">Fecha de visita</label><input id="fechaVisita" type="date">
+<label for="horaInicio">Hora de inicio</label><input id="horaInicio">
+<label for="analisis">Análisis de hechos (un párrafo por línea)</label><textarea id="analisis"></textarea>
+<label for="fuenteActa">Fuente de la información de hallazgos</label><input id="fuenteActa">
+<label for="nombreRecibeActa">Persona que recibió el acta</label><input id="nombreRecibeActa">
+<label for="dniRecibeActa">DNI de quien recibió el acta</label><input id="dniRecibeActa">
+<label for="cargoRecibeActa">Cargo de quien recibió el acta</label><input id="cargoRecibeActa">
+<label for="horaFin">Hora de término</label><input id="horaFin">
+</fieldset>
 
-<input id="placa" placeholder="Placa ficticia">
+<fieldset>
+<legend>Hallazgos</legend>
+<div id="hallazgos"></div>
+<button type="button" id="agregarHallazgo">Agregar hallazgo</button>
+</fieldset>
 
-<input id="supervisor" placeholder="Supervisor">
+<fieldset>
+<legend>Descargos</legend>
+<label class="check-label"><input type="checkbox" id="tieneDescargo"> ¿Presentó descargos?</label>
+<div id="zonaDescargo" hidden><label for="descargos">Análisis de descargos</label><textarea id="descargos"></textarea></div>
+</fieldset>
 
-<label>Antecedentes</label><textarea id="antecedentes"></textarea>
+<fieldset>
+<legend>Anexos</legend>
+<div id="anexos"></div>
+<button type="button" id="agregarAnexo">Agregar anexo</button>
+</fieldset>
 
-<label>Análisis de hechos</label><textarea id="analisis"></textarea>
+<fieldset>
+<legend>Conclusiones, recomendaciones y firmas</legend>
+<label for="conclusiones">Conclusiones</label><textarea id="conclusiones"></textarea>
+<label for="recomendaciones">Recomendaciones (un párrafo por línea)</label><textarea id="recomendaciones"></textarea>
+<h3>Representante legal</h3>
+<label for="representanteNombre">Nombre</label><input id="representanteNombre">
+<label for="representanteDni">DNI</label><input id="representanteDni">
+<label for="representanteCargo">Cargo</label><input id="representanteCargo">
+<label for="firmaRepresentante">Firma del representante legal</label>
+<p>Firme en el recuadro con el mouse, touchpad o pantalla táctil.</p>
+<canvas id="firmaRepresentante" class="signature-pad" width="688" height="512"
+ aria-label="Firma del representante legal"></canvas>
+<button type="button" class="secondary-button" data-clear-signature="firmaRepresentante">Borrar firma</button>
+<h3>Fiscalizador</h3>
+<label for="supervisorCip">CIP</label><input id="supervisorCip">
+<label for="firmaFiscalizador">Firma del fiscalizador</label>
+<p>Firme en el recuadro con el mouse, touchpad o pantalla táctil.</p>
+<canvas id="firmaFiscalizador" class="signature-pad" width="996" height="476"
+ aria-label="Firma del fiscalizador"></canvas>
+<button type="button" class="secondary-button" data-clear-signature="firmaFiscalizador">Borrar firma</button>
+</fieldset>
 
-<label><input type="checkbox" id="tieneDescargo"> ¿Presentó descargos?</label>
-
-<div id="zonaDescargo" hidden><label>Análisis de descargos</label>
-
-<textarea id="descargos"></textarea></div>
-
-<label>Conclusiones</label><textarea id="conclusiones"></textarea>
-
-<label>Recomendaciones</label><textarea id="recomendaciones"></textarea>
-
-<button type="submit">Guardar informe</button></form>
-
+<button type="submit">Guardar informe</button>
+</form>
 <h2>Informes registrados</h2><div id="lista"></div>
-
-<h2>Vista previa</h2><pre id="vista"></pre></main>
-
-<script src="app.js"></script></body></html>
+<h2>Vista previa</h2><pre id="vista"></pre>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
